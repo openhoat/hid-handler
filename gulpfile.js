@@ -146,6 +146,10 @@ _.merge(config, {
   }
 });
 
+if (process.env['TRAVIS']) {
+  config.test.coverage.reporters = ['lcovonly'];
+}
+
 if (ciMode) {
   process.env['XUNIT_FILE'] = 'dist/reports/test/junit.xml';
   config.test.coverage.reporters.push('cobertura');

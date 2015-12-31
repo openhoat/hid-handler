@@ -148,14 +148,18 @@ _.merge(config, {
 
 if (process.env['TRAVIS']) {
   config.test.coverage.reporters = ['lcovonly'];
+  config.test.coverage.reporter.options.lcovonly = {
+    file: 'lcov.info',
+    dir: path.join(config.reportDir, 'test-coverage/lcov')
+  };
 }
 
 if (ciMode) {
   process.env['XUNIT_FILE'] = 'dist/reports/test/junit.xml';
   config.test.coverage.reporters.push('cobertura');
   config.test.coverage.reporter.options.cobertura = {
-    dir: path.join(config.reportDir, 'test-coverage/cobertura'),
-    file: 'coverage.xml'
+    file: 'coverage.xml',
+    dir: path.join(config.reportDir, 'test-coverage/cobertura')
   };
 }
 

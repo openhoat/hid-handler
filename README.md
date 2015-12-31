@@ -28,11 +28,11 @@ hid-handler exposes an event emitter to manage all type of events.
 
 Types of event :
 
-    - 'event' : any event of any device (fallback)
-    - 'key' : a key is pressed and released
-    - 'move' : mouse (or pad) move (left, right, up, down)
-    - 'click' : mouse (or pad) click (left, right, ...)
-    - 'wheel' : mouse wheel click (up, down)
+- 'event' : any event of any device (fallback)
+- 'key' : a key is pressed and released
+- 'move' : mouse (or pad) move (left, right, up, down)
+- 'click' : mouse (or pad) click (left, right, ...)
+- 'wheel' : mouse wheel click (up, down)
 
 Example of usage :
 

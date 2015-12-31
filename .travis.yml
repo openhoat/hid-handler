@@ -7,6 +7,6 @@ install:
 
 before_script: "npm i -g gulp-cli"
 
-script: "gulp coverage; ls -Rl ./dist"
+script: "gulp coverage; cat dist/reports/test-coverage/lcov/lcov.info"
 
 after_script: "cat dist/reports/test-coverage/lcov/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

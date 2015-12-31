@@ -239,7 +239,7 @@ taskSpecs = {
   },
   mkdir: {
     desc: 'Create dir to generate build files',
-    config: {src: [config.distDir, config.reportDir, config.testReportDir, config.dreddTestReportDir]},
+    config: {src: [config.distDir, config.reportDir, config.testReportDir]},
     task: function (t) {
       return p.each(t.config.src, function (dir) {
         return p.fromNode(mkdirp.bind(mkdirp, dir))

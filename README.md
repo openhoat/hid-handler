@@ -2,6 +2,10 @@
 
 This nodejs module provides an event handler for USB HID devices.
 
+It is based on libusb, thx to the wonderful [node-usb](https://github.com/nonolith/node-usb) nodejs module.
+
+The purpose of this module is to provide a higher level of USB devices handling, and just use it in your app without having to deal with all technical details of libusb.
+
 ## Installation
 
 ```

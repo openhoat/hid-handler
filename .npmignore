@@ -1,6 +1,7 @@
 .idea
 .gitignore
 dist
+lib/fake
 gulpfile.js
 .jshintrc
 spec

@@ -1,0 +1,6 @@
+.idea
+.gitignore
+dist
+gulpfile.js
+.jshintrc
+spec

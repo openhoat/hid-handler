@@ -1,0 +1,54 @@
+{
+  "name": "hid-handler",
+  "version": "1.0.1",
+  "description": "HID handler",
+  "private": "true",
+  "main": "lib/hid-handler.js",
+  "scripts": {
+    "start": "bin/hidsh"
+  },
+  "author": "Olivier Penhoat <openhoat@gmail.com> (http://headwood.net/)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:openhoat/hid-handler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhoat/hid-handler/issues"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "hw-error": "^0.3.3",
+    "hw-logger": "^1.1.15",
+    "hw-promise": "0.0.2",
+    "lodash": "^3.10.1",
+    "node-hid": "^0.5.1",
+    "require-directory": "^2.1.1",
+    "usb": "^1.1.1",
+    "yamljs": "^0.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chalk": "^1.1.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-if": "^2.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jshint": "^2.0.0",
+    "gulp-jshint-checkstyle-reporter": "^1.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-shell": "^0.5.1",
+    "gulp-util": "^3.0.7",
+    "hw-promise": "0.0.2",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^2.3.4",
+    "spec-xunit-file": "0.0.1-3"
+  }
+}

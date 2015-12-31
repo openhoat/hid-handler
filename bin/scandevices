@@ -1,0 +1,8 @@
+#!/usr/local/bin/node
+
+'use strict';
+
+var util = require('../lib/util')
+  , YAML = require('yamljs');
+
+console.log(YAML.stringify(util.scanDevices()));

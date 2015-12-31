@@ -16,7 +16,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.1.1",
     "hw-error": "^0.3.3",
     "hw-logger": "^1.1.15",
     "hw-promise": "0.0.2",
@@ -39,7 +38,6 @@
     "gulp-mocha": "^2.2.0",
     "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.7",
-    "hw-promise": "0.0.2",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
     "minimist": "^1.2.0",

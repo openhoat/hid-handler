@@ -9,4 +9,4 @@ before_script: "npm i -g gulp-cli"
 
 script: "gulp test"
 
-after_script: "gulp coveralls"
+after_script: "cat dist/reports/test-coverage/lcov/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

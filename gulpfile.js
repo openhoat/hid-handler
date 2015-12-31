@@ -1,7 +1,5 @@
 'use strict';
 
-console.log(process.env);
-
 var _ = require('lodash')
   , chalk = require('chalk')
   , checkstyleReporter = require('gulp-jshint-checkstyle-reporter')

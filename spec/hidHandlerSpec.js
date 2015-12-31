@@ -31,4 +31,24 @@ describe('hid-handler', function () {
     expect(new hidHandler.TouchpadEvent()).to.be.an.instanceof(hidHandler.TouchpadEvent).and.is.an.instanceof(hidHandler.GenericEvent);
   });
 
+  it('should provide methods', function () {
+    [
+      'getRegisteredHid',
+      'getSupportedDevice',
+      'handleEndpointData',
+      'handleEndpointError',
+      'handleEndpointEnd',
+      'handleUsbAttach',
+      'handleUsbDetach',
+      'registerEventHandler',
+      'registerHid',
+      'unregisterHid',
+      'init',
+      'start',
+      'stop'
+    ].forEach(function (key) {
+      expect(hidHandler).to.respondTo(key);
+    });
+  });
+
 });

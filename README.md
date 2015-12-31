@@ -76,12 +76,27 @@ hidHandler.start(); // starts the handler
 
 ## API
 
-### init
+### init(opt)
 
-### start
+Initialize hid-handler with optional opt.supportedDevices to specify devices to handle (by default all connected devices are handled).
+
+supportedDevices should be an array of objects containing vendorId and productId properties.
+
+To find vendorId and productId of your existing devices, check bin/scandevices :-)
+
+### start(opt, cb)
+
+Starts hid-handler and return a [promise](https://promisesaplus.com/) (or call the cb callback).
+
+First call init(opt) if it was not done before.
+
+If opt is provided and init was not called before, then start will call.
+
+Warning : all handled devices will be detached from the kernel and reattached to it when stop() is called
 
 ### stop
 
-@TODO : to complete
+Stops hid-handler, and free all resources :-)
+
 
 Enjoy!

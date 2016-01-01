@@ -20,7 +20,7 @@ npm install hid-handler
 
 Suppose you want to handle an USB keyboard :
 
-```
+```javascript
 var hidHandler = require('hid-handler');
 
 hidHandler.on('key', function (event) {
@@ -61,7 +61,7 @@ Types of event :
 
 Example of usage :
 
-```
+```javascript
 var hidHandler = require('hid-handler');
 
 hidHandler.on('event', function (event) { // catch all events for all devices

@@ -16,6 +16,32 @@ The purpose of this module is to provide a higher level of USB devices handling,
 npm install hid-handler
 ```
 
+## Quick start
+
+Suppose you want to handle an USB keyboard :
+
+```
+var hidHandler = require('hid-handler');
+
+hidHandler.on('key', function (event) {
+  // catch key events (emitted by keyboard devices)
+  console.log('key event :', event.toString());
+});
+
+hidHandler.start({
+  supportedDevices: {
+    name: 'Microsoft comfort curve keyboard',   // optional
+    type: 'keyboard',                           // required
+    vendorId: 0x045e,                           // required
+    productId: 0x00dd                           // required
+  }
+});
+
+process.on('SIGINT', function () { // properly stop the handler in a simple main app
+  hidHandler.stop();
+});
+```
+
 ## Usage
 
 hid-handler first registers the devices you want, or all the detected ones.
@@ -61,9 +87,10 @@ hidHandler.on('move', function (event) { // catch move events (emitted by mouse 
 
 hidHandler.init({
   supportedDevices: [{
-    name: 'Razer mouse', // optional
-    vendorId: 0x1532, // required
-    productId: 0x0003 // required
+    name: 'Razer mouse',    // optional
+    type: 'mouse',          // required
+    vendorId: 0x1532,       // required
+    productId: 0x0003       // required
   }]
 });
 
@@ -75,6 +102,12 @@ hidHandler.start(function() {
   console.log('started');
 }); // starts the handler
 ```
+
+The 'type' property of a supported device should match an available event handler class name to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
+
+Available default values for 'type' are : keyboard, mouse, touchpad, generic (defaults). 
+
+Event handler classes are extendable with [registerEventHandler](#registereventhandlereventhandlerclass). 
 
 ## API
 

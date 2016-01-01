@@ -1,7 +1,7 @@
 {
   "name": "hid-handler",
-  "version": "0.0.1",
-  "description": "HID handler",
+  "version": "0.0.2",
+  "description": "USB Hid handler for nodejs",
   "main": "lib/hid-handler.js",
   "author": "Olivier Penhoat <openhoat@gmail.com> (http://headwood.net/)",
   "repository": {

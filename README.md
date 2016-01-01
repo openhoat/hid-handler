@@ -28,8 +28,8 @@ hidHandler.on('key', function (event) {
 });
 
 hidHandler.start({
-  supportedDevices: {
-    name: 'Microsoft comfort curve keyboard',   // optional
+  supportedDevices: {                           // object or array of devices
+    name: 'Microsoft comfort curve keyboard',   // optional (not used decoration)
     type: 'keyboard',                           // required
     vendorId: 0x045e,                           // required
     productId: 0x00dd                           // required
@@ -102,11 +102,22 @@ hidHandler.start(function() {
 }); // starts the handler
 ```
 
+## Device types
+
+Currently supported device types are :
+
+- generic   : used for base class or unknown devices
+- keyboard  : generates key pressed events
+- mouse     : generates clicks, wheel clicks and move events
+- touchpad  : generates clicks and move events
+
 The 'type' property of a supported device should match an available event handler class name to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
 
 Available default values for 'type' are : keyboard, mouse, touchpad, generic (defaults). 
 
 Event handler classes are extendable with [registerEventHandler](#registereventhandlereventhandlerclass). 
+
+Feel free to extend to map your needs !
 
 ## API
 

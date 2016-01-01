@@ -35,14 +35,7 @@ describe('hid-handler', function () {
     [
       'getRegisteredHid',
       'getSupportedDevice',
-      'handleEndpointData',
-      'handleEndpointError',
-      'handleEndpointEnd',
-      'handleUsbAttach',
-      'handleUsbDetach',
       'registerEventHandler',
-      'registerHid',
-      'unregisterHid',
       'init',
       'start',
       'stop'

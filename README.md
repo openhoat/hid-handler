@@ -78,6 +78,10 @@ hidHandler.start(function() {
 
 ## API
 
+### getSupportedDevice(vendorId, productId)
+
+Find and return the matching device from supported devices list.
+
 ### init(opt)
 
 Initialize hid-handler with optional opt.supportedDevices to specify devices to handle (by default all connected devices are handled).

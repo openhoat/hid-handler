@@ -71,7 +71,9 @@ process.on('SIGINT', function () { // properly stop the handler in a simple main
   hidHandler.stop();
 });
 
-hidHandler.start(); // starts the handler
+hidHandler.start(function() {
+  console.log('started');
+}); // starts the handler
 ```
 
 ## API
@@ -98,5 +100,33 @@ Warning : all handled devices will be detached from the kernel and reattached to
 
 Stops hid-handler, and free all resources :-)
 
+### getRegisteredHid(vendorId, productId)
+
+Returns the registered hid matching vendorId and productId, or null if not found.
+
+### getSupportedDevice(vendorId, productId)
+
+Returns supported device matching vendorId and productId, or null if not found.
+
+The supported devices are specified at init() invocation, by default all connected devices are supported.
+
+### registerEventHandler(eventHandlerClass)
+
+Registers an event handler class.
+Useful to add a custom event handler for a device that's not supported.
+
+## Event handler class
+
+The GenericEvent class is the base class used as a super class by the others. 
+
+An event handler class should :
+
+- have a name matching [A-Z].*Event
+- provide a constructor that calls super constructor
+- optionally provide toString() method
+- provide parseData() method to parse data emitted by the matching device
+- provide emit(sources) method to emit high level events to the world
+
+Example of event handler class implementation : [KeyboardEvent](tree/master/lib/event-handlers/keyboard.js)
 
 Enjoy!

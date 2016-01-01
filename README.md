@@ -24,8 +24,7 @@ Suppose you want to handle an USB keyboard :
 var hidHandler = require('hid-handler');
 
 hidHandler.on('key', function (event) {
-  // catch key events (emitted by keyboard devices)
-  console.log('key event :', event.toString());
+  console.log('keycodes :', event.keycodes); // raw keycodes array emitted by the keyboard
 });
 
 hidHandler.start({

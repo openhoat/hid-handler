@@ -12,8 +12,8 @@ The purpose of this module is to provide a higher level of USB devices handling,
 
 ## Installation
 
-```
-npm install hid-handler
+```bash
+$ npm install hid-handler
 ```
 
 ## Quick start

@@ -120,10 +120,8 @@ _.merge(config, {
       src: config.test.src,
       instrument: {
         pattern: [
-          'config/**/*.js',
-          'lib/**/*.js',
-          '!**/deprecated/**', '!**/*.deprecated.js',
-          '!lib/admin-cluster.js', '!lib/api-cluster.js', '!lib/services/cluster.js'
+          'lib/*.js',
+          '!**/deprecated/**', '!**/*.deprecated.js'
         ],
         options: {
           includeUntested: true

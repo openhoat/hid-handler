@@ -43,13 +43,13 @@ process.on('SIGINT', function () { // properly stop the handler in a simple main
 
 ## Usage
 
-hid-handler first registers the devices you want, or all the detected ones.
+Hid handler first registers the devices you want, or all the detected ones.
 
 After starting, every registered devices are mapped to an event handler class (see [event-handlers](tree/master/lib/event-handlers)).
 
 Each event handler class is matching a type of device (keyboard, mouse, ...).
 
-hid-handler exposes an event emitter to manage all type of events.
+Hid handler exposes an event emitter to manage all type of events.
 
 Types of event :
 
@@ -116,15 +116,19 @@ Find and return the matching device from supported devices list.
 
 ### init(opt)
 
-Initialize hid-handler with optional opt.supportedDevices to specify devices to handle (by default all connected devices are handled).
+Initialize hid handler with optional opt.supportedDevices to specify devices to handle (by default all connected devices are handled).
 
 supportedDevices should be an array of objects containing vendorId and productId properties.
 
 To find vendorId and productId of your existing devices, check bin/scandevices :-)
 
+### isStarted()
+
+Returns true if hid handler is started, false else.
+
 ### start(opt, cb)
 
-Starts hid-handler and return a [promise](https://promisesaplus.com/) (or call the cb callback).
+Starts hid handler and return a [promise](https://promisesaplus.com/) (or call the cb callback).
 
 First call init(opt) if it was not done before.
 
@@ -134,7 +138,7 @@ Warning : all handled devices will be detached from the kernel and reattached to
 
 ### stop
 
-Stops hid-handler, and free all resources :-)
+Stops hid handler, and free all resources :-)
 
 ### getRegisteredHid(vendorId, productId)
 

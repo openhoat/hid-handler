@@ -19,6 +19,7 @@ describe('hid-handler', function () {
     expect(hidHandler).to.have.property('HidEventHandlerNameError');
     expect(new hidHandler.HidHandlerError()).to.be.an.instanceof(hidHandler.HidHandlerError).and.is.an.instanceof(Error);
     expect(new hidHandler.HidAlreadyRegisteredError()).to.be.an.instanceof(hidHandler.HidAlreadyRegisteredError).and.is.an.instanceof(hidHandler.HidHandlerError).and.is.an.instanceof(Error);
+    expect(new hidHandler.HidEventHandlerNameError()).to.be.an.instanceof(hidHandler.HidEventHandlerNameError).and.is.an.instanceof(hidHandler.HidHandlerError).and.is.an.instanceof(Error);
   });
 
   it('should provide event classes', function () {
@@ -42,6 +43,29 @@ describe('hid-handler', function () {
     ].forEach(function (key) {
       expect(hidHandler).to.respondTo(key);
     });
+  });
+
+  it('should try to get registered hid', function () {
+    expect(hidHandler.getRegisteredHid(1, 1)).to.be.undefined;
+    expect(hidHandler.getRegisteredHid('1:1')).to.be.undefined;
+  });
+
+  it('should try to get supported hid', function () {
+    var supportedDevice = {name: 'fake device', vendorId: 1, productId: 1};
+    hidHandler.init({supportedDevices: supportedDevice});
+    expect(hidHandler.getSupportedDevice(1, 1)).to.be.equal(supportedDevice);
+  });
+
+  it('should start and stop', function () {
+    hidHandler.init({supportedDevices: []});
+    return hidHandler.start()
+      .then(function () {
+        expect(hidHandler.isStarted()).to.be.true;
+      })
+      .then(hidHandler.stop.bind(hidHandler))
+      .then(function () {
+        expect(hidHandler.isStarted()).to.be.false;
+      });
   });
 
 });

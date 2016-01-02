@@ -15,25 +15,13 @@ supportedDevices = [{
 }, {
   name: 'Simply touch pad',
   enabled: true,
-  type: 'touchpad',
+  type: {1: 'touchpad'},
   vendorId: 0x04f3,
   productId: 0x0711
 }, {
-  name: 'Razer mouse',
-  enabled: false,
-  type: 'mouse',
-  vendorId: 0x1532,
-  productId: 0x0003
-}, {
-  name: 'iSight mouse',
-  enabled: false,
-  type: 'mouse',
-  vendorId: 0x0603,
-  productId: 0x0002
-}, {
   name: 'Essentiel num pad',
-  enabled: false,
-  type: 'touchpad',
+  enabled: true,
+  type: 'numpad',
   vendorId: 0x05a4,
   productId: 0x8001
 }, {
@@ -44,7 +32,7 @@ supportedDevices = [{
   productId: 0x0221
 }, {
   name: 'Microsoft comfort curve keyboard',
-  enabled: false,
+  enabled: true,
   type: 'keyboard',
   vendorId: 0x045e,
   productId: 0x00dd

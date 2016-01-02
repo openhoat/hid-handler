@@ -30,7 +30,7 @@ hidHandler.on('key', function (event) {
 hidHandler.start({
   supportedDevices: {                           // object or array of devices
     name: 'Microsoft comfort curve keyboard',   // optional (not used decoration)
-    type: 'keyboard',                           // required
+    type: 'keyboard',                           // if not specified, only generic events are emitted
     vendorId: 0x045e,                           // required
     productId: 0x00dd                           // required
   }
@@ -88,10 +88,9 @@ hidHandler.on('move', function (event) { // catch move events (emitted by mouse 
 hidHandler.init({
   supportedDevices: [{
     name: 'Razer mouse',    // optional
-    type: 'mouse',          // required
+    type: { 0: 'mouse' },  // optional, types of interfaces (defaults : {0:generic})
     vendorId: 0x1532,       // required
     productId: 0x0003,      // required
-    interface: 0            // optional, interface index to use (default : 0)
   }]
 });
 
@@ -114,7 +113,9 @@ Currently supported device types are :
 - mouse     : generates clicks, wheel clicks and move events
 - touchpad  : generates clicks and move events
 
-The 'type' property of a supported device should match an available event handler class name to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
+The 'type' property of a supported device should match available event handler class names to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
+
+If type is an object each key should be an interface index (0, 1, ...) else if type is a string it defines only the type of the first interface (0).
 
 Available default values for 'type' are : keyboard, numpad, mouse, touchpad, generic (defaults). 
 

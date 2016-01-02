@@ -66,6 +66,7 @@ var hidHandler = require('hid-handler');
 
 hidHandler.on('event', function (event) { // catch all events for all devices
   console.log('event :', event.toString()); // event class toString to display nice events status
+  console.log('device :', event.hid.deviceKey.toString()); // hid device key concerned
 });
 
 hidHandler.on('key', function (event) { // catch key events (emitted by keyboard devices)
@@ -89,7 +90,8 @@ hidHandler.init({
     name: 'Razer mouse',    // optional
     type: 'mouse',          // required
     vendorId: 0x1532,       // required
-    productId: 0x0003       // required
+    productId: 0x0003,      // required
+    interface: 0            // optional, interface index to use (default : 0)
   }]
 });
 
@@ -108,12 +110,13 @@ Currently supported device types are :
 
 - generic   : used for base class or unknown devices
 - keyboard  : generates key pressed events
+- numpad    : generates key pressed events
 - mouse     : generates clicks, wheel clicks and move events
 - touchpad  : generates clicks and move events
 
 The 'type' property of a supported device should match an available event handler class name to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
 
-Available default values for 'type' are : keyboard, mouse, touchpad, generic (defaults). 
+Available default values for 'type' are : keyboard, numpad, mouse, touchpad, generic (defaults). 
 
 Event handler classes are extendable with [registerEventHandler](#registereventhandlereventhandlerclass). 
 

@@ -3,7 +3,7 @@ language: node_js
 node_js: 0.12
 
 install:
-  - npm install hw-error hw-logger hw-promise lodash require-directory yamljs chai chalk coveralls del gulp gulp-debug gulp-if gulp-istanbul gulp-jshint gulp-jshint-checkstyle-reporter gulp-mocha gulp-shell gulp-util jshint jshint-stylish minimist mkdirp mocha
+  - npm install hw-error hw-logger hw-promise jsonic lodash properties require-directory yamljs chai chalk coveralls del gulp gulp-debug gulp-if gulp-istanbul gulp-jshint gulp-jshint-checkstyle-reporter gulp-mocha gulp-shell gulp-util jshint jshint-stylish minimist mkdirp mocha
 
 before_script: "npm i -g gulp-cli"
 

@@ -202,7 +202,7 @@ The supported devices are specified at init() invocation, by default all connect
 Registers an event handler class.
 Useful to add a custom event handler for a device that's not supported.
 
-### keyLayout
+### keyLayouts
 
 Provides keyboard layouts to convert scan codes to keycodes.
  

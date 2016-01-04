@@ -235,7 +235,7 @@ Keycodes with spaces are considered as arrays
 
 Extra layouts values always inherit from generic layout.
 
-Example of layout file [generic.properties](tree/master/lib/key-layouts/generic.properties)
+Example of layout file [generic.properties](blob/master/lib/key-layouts/generic.properties)
 
 ### util
 

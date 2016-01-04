@@ -13,6 +13,7 @@ This nodejs module provides an event handler for USB HID devices.
 ![Keyboard](http://screenshots.en.sftcdn.net/en/scrn/69706000/69706904/thumbnail_1430424066-100x100.png)
 ![Numpad](http://www.mytrendyphone.co.uk/images/Genius-Numpad-i110-USB-Slim-Numeric-Keypad-Black-07012013-2-t.jpg)
 ![Touchpad](https://regmedia.co.uk/2011/11/02/logi_1.jpg?x=100&y=100&crop=1)
+![Presenter](https://www.jakmall.com/images/products/46/33/1274/1/100/infiniter-laser-presenter-red-laser-lr-22r-8.jpg)
 
 Based on libusb, thx to the wonderful [node-usb](https://github.com/nonolith/node-usb) nodejs module.
 
@@ -120,6 +121,7 @@ Currently supported device types are :
 - numpad    : generates key pressed events
 - mouse     : generates clicks, wheel clicks and move events
 - touchpad  : generates clicks and move events
+- presenter : generates clicks, move and key events
 
 The 'type' property of a supported device should match available event handler class names to lower case and without the word 'Event'. (example : 'KeyboardEvent' class matches type 'keyboard')
 

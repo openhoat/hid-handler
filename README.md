@@ -53,7 +53,7 @@ process.on('SIGINT', function () { // properly stop the handler in a simple main
 
 Hid handler first registers the devices you want, or all the detected ones.
 
-After starting, every registered devices are mapped to an event handler class (see [event-handlers](tree/master/lib/event-handlers)).
+After starting, every registered devices are mapped to an event handler class (see [event-handlers](https://github.com/openhoat/hid-handler/tree/master/lib/event-handlers)).
 
 Each event handler class is matching a type of device (keyboard, mouse, ...).
 
@@ -216,7 +216,7 @@ If a layout matches the registered device, events are populated with the associa
 
 Layouts are provided as properties, json or yaml files.
 
-Hid handler includes some [default layouts](tree/master/lib/key-layouts) (generic qwerty, azerty-fr).
+Hid handler includes some [default layouts](https://github.com/openhoat/hid-handler/tree/master/lib/key-layouts) (generic qwerty, azerty-fr).
 
 Feel free to add some custom layouts with :
 
@@ -235,7 +235,7 @@ Keycodes with spaces are considered as arrays
 
 Extra layouts values always inherit from generic layout.
 
-Example of layout file [generic.properties](blob/master/lib/key-layouts/generic.properties)
+Example of layout file [generic.properties](https://github.com/openhoat/hid-handler/blob/master/lib/key-layouts/generic.properties)
 
 ### util
 
@@ -253,6 +253,6 @@ An event handler class should :
 - provide parseData() method to parse data emitted by the matching device
 - provide emit(sources) method to emit high level events to the world
 
-Example of event handler class implementation : [KeyboardEvent](tree/master/lib/event-handlers/keyboard.js)
+Example of event handler class implementation : [KeyboardEvent](https://github.com/openhoat/hid-handler/blob/master/lib/event-handlers/keyboard.js)
 
 Enjoy!

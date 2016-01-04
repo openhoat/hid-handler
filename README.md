@@ -14,7 +14,7 @@ This nodejs module provides an event handler for USB HID devices.
 ![Numpad](http://www.mytrendyphone.co.uk/images/Genius-Numpad-i110-USB-Slim-Numeric-Keypad-Black-07012013-2-t.jpg)
 ![Touchpad](https://regmedia.co.uk/2011/11/02/logi_1.jpg?x=100&y=100&crop=1)
 
-It is based on libusb, thx to the wonderful [node-usb](https://github.com/nonolith/node-usb) nodejs module.
+Based on libusb, thx to the wonderful [node-usb](https://github.com/nonolith/node-usb) nodejs module.
 
 The purpose of this module is to provide a higher level of USB devices handling, and just use it in your app without having to deal with all technical details of libusb.
 

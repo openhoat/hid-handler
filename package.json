@@ -1,6 +1,6 @@
 {
   "name": "hid-handler",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "USB Hid handler for nodejs",
   "main": "lib/hid-handler.js",
   "author": "Olivier Penhoat <openhoat@gmail.com> (http://headwood.net/)",
@@ -19,8 +19,10 @@
     "hw-error": "^0.3.3",
     "hw-logger": "^1.1.15",
     "hw-promise": "0.0.2",
+    "jsonic": "^0.2.2",
     "lodash": "^3.10.1",
     "node-hid": "^0.5.1",
+    "properties": "^1.2.1",
     "require-directory": "^2.1.1",
     "usb": "^1.1.1",
     "yamljs": "^0.2.4"

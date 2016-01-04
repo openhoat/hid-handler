@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/openhoat/hid-handler.png?branch=master)](https://travis-ci.org/openhoat/hid-handler)
 [![Coverage Status](https://coveralls.io/repos/openhoat/hid-handler/badge.svg?branch=master&service=github)](https://coveralls.io/github/openhoat/hid-handler?branch=master)
 
+[![NPM](https://nodei.co/npm/hid-handler.png)](https://nodei.co/npm/hid-handler/)
+
 # USB HID Handler
 
 This nodejs module provides an event handler for USB HID devices.
@@ -125,10 +127,6 @@ Feel free to extend to map your needs !
 
 ## API
 
-### getSupportedDevice(vendorId, productId)
-
-Find and return the matching device from supported devices list.
-
 ### init(opt)
 
 Initialize hid handler with optional opt.supportedDevices to specify devices to handle (by default all connected devices are handled).
@@ -136,6 +134,18 @@ Initialize hid handler with optional opt.supportedDevices to specify devices to 
 supportedDevices should be an array of objects containing vendorId and productId properties.
 
 To find vendorId and productId of your existing devices, check bin/scandevices :-)
+
+Options :
+
+```javascript
+{
+  supportedDevices,     // array of objects containing vendorId and productId properties to support
+  keyLayouts: {
+    baseDir,            // custom base dir to scan for keyboard layouts
+    layouts             // extra custom keyboard layouts
+  }
+}
+```
 
 ### isStarted()
 
@@ -155,9 +165,31 @@ Warning : all handled devices will be detached from the kernel and reattached to
 
 Stops hid handler, and free all resources :-)
 
+### getSupportedDevice(vendorId, productId)
+
+Find and return the matching device from supported devices list.
+
+### getRegisteredDevices
+
+Returns list of registered devices.
+
+Each device is an object containing :
+
+- deviceKey: vendorId:productId key
+- product: id of the product
+- manufacturer : id of the manufacturer
+
 ### getRegisteredHid(vendorId, productId)
 
 Returns the registered hid matching vendorId and productId, or null if not found.
+
+### getRegisteredHids
+
+Returns the registered hids.
+
+### getRegisteredHidKeys
+
+Returns the registered hid keys (vendorId:productId).
 
 ### getSupportedDevice(vendorId, productId)
 
@@ -169,6 +201,39 @@ The supported devices are specified at init() invocation, by default all connect
 
 Registers an event handler class.
 Useful to add a custom event handler for a device that's not supported.
+
+### keyLayout
+
+Provides keyboard layouts to convert scan codes to keycodes.
+ 
+If a layout matches the registered device, events are populated with the associated keycode in addition to scan codes. 
+
+Layouts are provided as properties, json or yaml files.
+
+Hid handler includes some [default layouts](tree/master/lib/key-layouts) (generic qwerty, azerty-fr).
+
+Feel free to add some custom layouts with :
+
+- registerLayout(layout) : register an extra layout
+- registerLayoutFile(file) : register a layout file
+- registerLayoutDir(dir) : scan layout files from specific directory
+
+#### Layout format
+
+- name : name of the layout (for a file this is the basename of the file)
+- value : an object containing scancodes as keys, and keycodes as values
+
+Keycodes values can be arrays to manage modifiers (shift, alt, ctrl)
+
+Keycodes with spaces are considered as arrays
+
+Extra layouts values always inherit from generic layout.
+
+Example of layout file [generic.properties](tree/master/lib/key-layouts/generic.properties)
+
+### util
+
+Helper that overrides NodesJS util.
 
 ## Event handler class
 

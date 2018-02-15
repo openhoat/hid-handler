@@ -20,7 +20,7 @@
     "hw-logger": "^1.1.15",
     "hw-promise": "0.0.2",
     "jsonic": "^0.2.2",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.5",
     "node-hid": "^0.5.1",
     "properties": "^1.2.1",
     "require-directory": "^2.1.1",

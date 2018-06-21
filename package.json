@@ -25,7 +25,8 @@
     "properties": "^1.2.1",
     "require-directory": "^2.1.1",
     "usb": "^1.1.1",
-    "yamljs": "^0.2.4"
+    "yamljs": "^0.2.4",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
@@ -47,5 +48,10 @@
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.4",
     "spec-xunit-file": "0.0.1-3"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }

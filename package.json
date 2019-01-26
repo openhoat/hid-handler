@@ -21,7 +21,7 @@
     "hw-promise": "0.0.2",
     "jsonic": "^0.2.2",
     "lodash": "^3.10.1",
-    "node-hid": "^0.5.1",
+    "node-hid": "^0.7.6",
     "properties": "^1.2.1",
     "require-directory": "^2.1.1",
     "usb": "^1.1.1",
